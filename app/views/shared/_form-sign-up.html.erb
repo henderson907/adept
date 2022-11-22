@@ -1,0 +1,22 @@
+<div class="form-sign-up-container d-flex">
+        <%= simple_form_for(@user) do |f| %>
+        <div class="form-user-box">
+<h2><%= "Add a mighty user!"%></h2>
+            <%= f.input :name %>
+            <%= f.input :email %>
+            <%= f.input :encrypted_password,
+              validates :encrypted_password, :presence => true,
+                       :confirmation => true,
+                       :length => {:within => 6..40},
+                       :on => :create
+            validates :encrypted_password, :confirmation => true,
+                       :length => {:within => 6..40},
+                       :allow_blank => true,
+                       :on => :update
+                       %>
+            <%= f.input :encrypted_password_confirmation ,
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: 'btn btn-primary'  %>
+        </div>
+        <% end %>
+</div>
