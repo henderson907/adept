@@ -1,0 +1,20 @@
+<div class="form-venue-container d-flex">
+        <%= simple_form_for(@venue) do |f| %>
+        <div class="form-venue-box">
+<h2><%= "Add a venue!"%></h2>
+            <%= f.input :name %>
+            <%= f.input :phone %>
+            <%= f.input :category, as: :select, collection: [['Hot','hot'],['Medium','medium'],['Cold','cold']], prompt: 'Select category' %>
+            <%= f.input :website %>
+            <%= f.input :hours %>
+            <%= f.input :address,
+                        input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+                        wrapper_html: {data: {controller: "address-autocomplete",
+                        address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+            %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: 'btn btn-primary'  %>
+        </div>
+        <% end %>
+    <img class="img-display" src="https://images.freeimages.com/images/premium/previews/3329/33294946-rome-pin-map.jpg" alt="Card image cap">
+</div>

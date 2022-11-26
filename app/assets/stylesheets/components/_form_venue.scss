@@ -1,0 +1,21 @@
+.img-display {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.form-venue-container {
+    margin: 30px 80px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.form-creature-box {
+    width: 50vw;
+}

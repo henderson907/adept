@@ -15,4 +15,24 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
   end
+
+  def new
+    @venue = Venue.new
+  end
+
+  def create
+    @venue = Venue.new(venue_params)
+    @venue.user = current_user
+    if @venue.save
+      redirect_to venues_path
+    else
+      puts "Fatal error my friend"
+    end
+  end
+
+  private
+
+  def venue_params
+    params.require(:venue).permit(:name, :address, :photo)
+  end
 end

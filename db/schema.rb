@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_195916) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_24_184751) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_195916) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.string "first_name"
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -96,6 +97,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_195916) do
     t.bigint "venue_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "phone"
+    t.string "website"
+    t.string "category"
+    t.integer "hours"
     t.index ["venue_category_id"], name: "index_venues_on_venue_category_id"
   end
 
