@@ -24,6 +24,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @saved_venues = SavedVenue.where(user_id: current_user)
   end
 
   def venue_filter(feature_name)

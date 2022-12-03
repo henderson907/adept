@@ -22,7 +22,11 @@
         <i class="fa-solid fa-pencil"></i> Add review
       <% end %>
       <%= link_to (nil) do %>
-        <i class="fa-regular fa-heart"></i> Save
+        <% if @saved_venues.empty? %>
+          <i class="fa-regular fa-heart"></i> Save
+        <% else %>
+          <i class="fa-solid fa-heart"></i> Saved
+        <% end %>
       <% end %>
   </div>
   <!-- Category / Address -->
